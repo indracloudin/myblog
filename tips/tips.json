@@ -1,0 +1,16 @@
+[
+  {
+    "title": "GitHub Actions: Reusable Workflows for Monorepos",
+    "date": "2025-07-12",
+    "href": "tips/gh-actions-reusable-monorepo.md",
+    "summary": "Share CI steps across packages using workflow_call and matrix strategies.",
+    "tags": ["github", "actions", "monorepo"]
+  },
+  {
+    "title": "Serverless: Cold Starts, Warm Strategies",
+    "date": "2025-06-30",
+    "href": "tips/serverless-cold-starts.md",
+    "summary": "Ways to reduce Lambda/Cloud Functions latency.",
+    "tags": ["serverless","lambda","performance"]
+  }
+]
