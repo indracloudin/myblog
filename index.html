@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>indracloudin – Cloud Modernization • Cloud-Native • Serverless • Automation</title>
+  <meta name="description" content="Portfolio and knowledge hub: tips & tricks, projects, consulting, and learning resources for GitHub, serverless, and cloud." />
+  <meta property="og:title" content="indracloudin – Cloud Modernization • Cloud-Native • Serverless • Automation" />
+  <meta property="og:description" content="Tips & tricks, projects, consulting, and learning resources for GitHub, serverless, and cloud." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og-image.png" />
+  <link rel="icon" href="/assets/favicon.ico" />
+
+  <!-- Tailwind (CDN build for GitHub Pages, no build step needed) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config (optional brand colors)
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f5fbff', 100: '#e9f6ff', 200: '#cfeaff', 300: '#a5d9ff', 400: '#6fc1ff', 500: '#3aa7ff', 600: '#128fff', 700: '#0f74d1', 800: '#105ea7', 900: '#124f87'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+  
+  <script>
+    // Dark mode toggle with localStorage
+    const themeKey = 'theme-preference';
+    const getTheme = () => localStorage.getItem(themeKey) || 'system';
+    const reflectTheme = (theme) => {
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.classList.toggle('dark', theme === 'dark' || (theme === 'system' && systemDark));
+    };
+    reflectTheme(getTheme());
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => reflectTheme(getTheme()));
+    window.setTheme = (theme) => { localStorage.setItem(themeKey, theme); reflectTheme(theme); };
+  </script>
+
+  <!-- Minimal SEO schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "indracloudin",
+    "url": "https://indracloudin.github.io/",
+    "jobTitle": "Cloud Architect",
+    "sameAs": [
+      "https://github.com/indracloudin",
+      "https://www.linkedin.com/in/indracloudin"
+    ]
+  }
+  </script>
+</head>
+<body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+  <!-- Nav -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-white/70 dark:bg-slate-950/60 border-b border-slate-200/60 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+      <a href="#home" class="font-bold text-lg tracking-tight">{Your Name}</a>
+      <nav class="hidden md:flex gap-6 text-sm">
+        <a href="#tips" class="hover:text-brand-600 dark:hover:text-brand-400">Tips & Tricks</a>
+        <a href="#projects" class="hover:text-brand-600 dark:hover:text-brand-400">Projects</a>
+        <a href="#consult" class="hover:text-brand-600 dark:hover:text-brand-400">Consultation</a>
+        <a href="#learn" class="hover:text-brand-600 dark:hover:text-brand-400">Learn</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button aria-label="Toggle theme" class="rounded-xl px-3 py-1.5 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800" onclick="setTheme(document.documentElement.classList.contains('dark') ? 'light' : 'dark')">🌗</button>
+        <a href="https://github.com/indracloudin" target="_blank" class="rounded-xl px-3 py-1.5 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
+          Cloud, Serverless, & GitHub —
+          <span class="text-brand-600 dark:text-brand-400">done right</span>
+        </h1>
+        <p class="mt-5 text-lg text-slate-600 dark:text-slate-300">
+          I help teams ship faster with GitHub, design reliable serverless systems, and scale on AWS/GCP/Azure.
+        </p>
+        <div class="mt-8 flex gap-3">
+          <a href="#consult" class="inline-flex items-center rounded-2xl px-5 py-3 bg-brand-600 text-white hover:bg-brand-700 shadow">
+            Book a consult
+          </a>
+          <a href="#projects" class="inline-flex items-center rounded-2xl px-5 py-3 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800">
+            See projects
+          </a>
+        </div>
+        <div class="mt-6 text-sm text-slate-500 dark:text-slate-400">Available for short-term advisory & code reviews.</div>
+      </div>
+      <div class="relative">
+        <div class="rounded-2xl p-6 border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 shadow-sm">
+          <h2 class="font-semibold mb-4">Quick Stats</h2>
+          <ul class="grid grid-cols-2 gap-4 text-sm">
+            <li class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800">10+ yrs in cloud</li>
+            <li class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800">Serverless-first</li>
+            <li class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800">Cloud Modernization</li>
+            <li class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800">Well-Architected</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips & Tricks / Blog -->
+  <section id="tips" class="py-16 md:py-24 border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="text-3xl font-bold">Tips & Tricks</h2>
+        <a class="text-sm hover:underline" href="https://github.com/indracloudin/myblog/tree/main/tips">See all</a>
+      </div>
+      <p class="mt-2 text-slate-600 dark:text-slate-300">Short, practical notes for GitHub, serverless, and cloud infra.</p>
+      <div id="tipsList" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-16 md:py-24 border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="text-3xl font-bold">Projects</h2>
+        <a class="text-sm hover:underline" href="https://github.com/indracloudin?tab=repositories">More on GitHub</a>
+      </div>
+      <p class="mt-2 text-slate-600 dark:text-slate-300">Selected open-source and client work.</p>
+      <div id="projectsGrid" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- Consultation CTA -->
+  <section id="consult" class="py-16 md:py-24 border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-3xl font-bold">Consultation</h2>
+      <p class="mt-2 text-slate-600 dark:text-slate-300">Need help with GitHub Actions, monorepos, or serverless architecture? Book a session.</p>
+      <div class="mt-6 flex flex-col items-center gap-3">
+        <!-- Option 1: Calendly link -->
+        <a href="https://calendly.com/cloudgenesys-id/30min" target="_blank" class="inline-flex items-center rounded-2xl px-5 py-3 bg-brand-600 text-white hover:bg-brand-700 shadow">Schedule 30-min call</a>
+        <!-- Option 2: Email form (replace action with your Formspree endpoint) -->
+        <form action="https://formspree.io/f/mzzvqkwa" method="POST" class="w-full max-w-xl grid gap-3 text-left">
+          <input required type="text" name="name" placeholder="Your name" class="px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900" />
+          <input required type="email" name="email" placeholder="Email" class="px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900" />
+          <textarea required name="message" placeholder="What would you like help with?" rows="4" class="px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900"></textarea>
+          <button class="rounded-2xl px-5 py-3 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Learn -->
+  <section id="learn" class="py-16 md:py-24 border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-bold">Learn</h2>
+      <p class="mt-2 text-slate-600 dark:text-slate-300">Curated roadmaps and resources to level up.</p>
+      <div id="learnGrid" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+      <div>© <span id="year"></span> {Your Name}. All rights reserved.</div>
+      <div class="flex items-center gap-4">
+        <a href="mailto:{your-email}" class="hover:underline">Email</a>
+        <a href="https://www.linkedin.com/in/indracloudin" target="_blank" class="hover:underline">LinkedIn</a>
+        <a href="https://github.com/indracloudin" target="_blank" class="hover:underline">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Data & rendering scripts: edit the arrays below to customize content -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // === Edit me: Tips & Tricks ===
+    const tips = [
+      {
+        title: 'GitHub Actions: Reusable Workflows for Monorepos',
+        date: '2025-07-12',
+        href: 'tips/gh-actions-reusable-monorepo.md',
+        summary: 'Share CI steps across packages using workflow_call and matrix strategies.'
+      },
+      {
+        title: 'Serverless: Cold Starts, Warm Strategies',
+        date: '2025-06-30',
+        href: 'tips/serverless-cold-starts.md',
+        summary: 'Practical techniques to reduce latency on AWS Lambda / Cloud Functions.'
+      },
+      {
+        title: 'GitHub: Branch Protection You’ll Actually Keep',
+        date: '2025-05-10',
+        href: 'tips/github-branch-protection.md',
+        summary: 'Simple, effective protection rules that scale with your team.'
+      }
+    ];
+
+    // === Edit me: Projects ===
+    const projects = [
+      {
+        name: 'serverless-starter',
+        tags: ['AWS', 'Lambda', 'CDK'],
+        description: 'Opinionated starter with IaC, envs, and GitHub Actions CI/CD.',
+        repo: 'https://github.com/indracloudin/serverless-starter',
+        live: 'https://indracloudin.github.io/serverless-starter/',
+      },
+      {
+        name: 'monorepo-actions',
+        tags: ['GitHub', 'Actions', 'CI'],
+        description: 'Reusable workflows and examples for JS/TS monorepos.',
+        repo: 'https://github.com/indracloudin/monorepo-actions',
+        live: '',
+      },
+      {
+        name: 'cloud-cost-guard',
+        tags: ['FinOps', 'Guardrails'],
+        description: 'Policy examples & alerts to manage cloud spend.',
+        repo: 'https://github.com/indracloudin/cloud-cost-guard',
+        live: '',
+      }
+    ];
+
+    // === Edit me: Learn ===
+    const learn = [
+      {
+        title: 'GitHub Mastery',
+        items: [
+          'Actions: caches, services, and OIDC to cloud',
+          'Code scanning & Dependabot for supply chain',
+          'Branch protection, PR templates, CODEOWNERS'
+        ]
+      },
+      {
+        title: 'Serverless Architecture',
+        items: [
+          'Event-driven design, idempotency, retries',
+          'API Gateway patterns, auth with Cognito/Auth0',
+          'Observability: structured logs, traces, metrics'
+        ]
+      },
+      {
+        title: 'Cloud Foundations',
+        items: [
+          'IaC with Terraform/CDK/Pulumi',
+          'Networking: VPC, private endpoints, gateways',
+          'Security: IAM least privilege, KMS, SSM'
+        ]
+      }
+    ];
+
+    // Render helpers
+    function el(html) { const t = document.createElement('template'); t.innerHTML = html.trim(); return t.content.firstChild; }
+
+    // Render Tips
+    const tipsList = document.getElementById('tipsList');
+    tips
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .forEach(t => {
+        tipsList.appendChild(el(`
+          <a href="${t.href}" class="block p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-brand-500 hover:shadow-sm">
+            <div class="text-xs text-slate-500">${new Date(t.date).toLocaleDateString()}</div>
+            <h3 class="mt-1 font-semibold">${t.title}</h3>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">${t.summary}</p>
+          </a>
+        `));
+      });
+
+    // Render Projects
+    const projectsGrid = document.getElementById('projectsGrid');
+    projects.forEach(p => {
+      projectsGrid.appendChild(el(`
+        <div class="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-sm">
+          <div class="flex items-center justify-between gap-3">
+            <h3 class="font-semibold">${p.name}</h3>
+            <div class="flex gap-2 text-xs">
+              ${p.tags.map(t => `<span class='px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700'>${t}</span>`).join('')}
+            </div>
+          </div>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">${p.description}</p>
+          <div class="mt-4 flex items-center gap-3 text-sm">
+            <a class="underline" href="${p.repo}" target="_blank">Repo</a>
+            ${p.live ? `<a class="underline" href="${p.live}" target="_blank">Live</a>` : ''}
+          </div>
+        </div>
+      `));
+    });
+
+    // Render Learn
+    const learnGrid = document.getElementById('learnGrid');
+    learn.forEach(card => {
+      learnGrid.appendChild(el(`
+        <div class="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-sm">
+          <h3 class="font-semibold">${card.title}</h3>
+          <ul class="mt-3 text-sm list-disc list-inside text-slate-600 dark:text-slate-300">
+            ${card.items.map(i => `<li>${i}</li>`).join('')}
+          </ul>
+        </div>
+      `));
+    });
+  </script>
+</body>
+</html>
