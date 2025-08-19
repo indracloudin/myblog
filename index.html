@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>indracloudin – Cloud Modernization • Cloud-Native • Serverless • Automation</title>
-  <meta name="description" content="Portfolio and knowledge hub: tips & tricks, projects, consulting, and learning resources for GitHub, serverless, and cloud." />
-  <meta property="og:title" content="indracloudin – Cloud Modernization • Cloud-Native • Serverless • Automation" />
-  <meta property="og:description" content="Tips & tricks, projects, consulting, and learning resources for GitHub, serverless, and cloud." />
+  <meta name="description" content="Portfolio and knowledge hub: tips & tricks, projects, consulting, and learning resources for Cloud and DevOps." />
+  <meta property="og:title" content="indracloudin – Cloud Modernization • Cloud-Native • DevOps" />
+  <meta property="og:description" content="Tips & tricks, projects, consulting, and learning resources for cloud and devops" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/assets/og-image.png" />
   <link rel="icon" href="/assets/favicon.ico" />
@@ -82,11 +82,11 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
       <div>
         <h1 class="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
-          Cloud, Serverless, & GitHub —
+          Cloud & DevOps —
           <span class="text-brand-600 dark:text-brand-400">done right</span>
         </h1>
         <p class="mt-5 text-lg text-slate-600 dark:text-slate-300">
-          I help teams ship faster with GitHub, design reliable serverless systems, and scale on AWS/GCP/Azure.
+          Helping teams modernize through cloud migration, automation, and DevOps — shipping faster with GitHub and scaling on AWS, GCP, and Huawei Cloud.
         </p>
         <div class="mt-8 flex gap-3">
           <a href="#consult" class="inline-flex items-center rounded-2xl px-5 py-3 bg-brand-600 text-white hover:bg-brand-700 shadow">
@@ -103,7 +103,7 @@
           <h2 class="font-semibold mb-4">Quick Stats</h2>
           <ul class="grid grid-cols-2 gap-4 text-sm">
             <li class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800">10+ yrs in cloud</li>
-            <li class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800">Serverless-first</li>
+            <li class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800">DevOps</li>
             <li class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800">Cloud Modernization</li>
             <li class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800">Well-Architected</li>
           </ul>
@@ -119,7 +119,7 @@
         <h2 class="text-3xl font-bold">Tips & Tricks</h2>
         <a class="text-sm hover:underline" href="https://github.com/indracloudin/myblog/tree/main/tips">See all</a>
       </div>
-      <p class="mt-2 text-slate-600 dark:text-slate-300">Short, practical notes for GitHub, serverless, and cloud infra.</p>
+      <p class="mt-2 text-slate-600 dark:text-slate-300">Short, practical notes for Cloud migration/modernization and DevOps.</p>
       <div id="tipsList" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </div>
   </section>
@@ -140,7 +140,7 @@
   <section id="consult" class="py-16 md:py-24 border-t border-slate-200 dark:border-slate-800">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
       <h2 class="text-3xl font-bold">Consultation</h2>
-      <p class="mt-2 text-slate-600 dark:text-slate-300">Need help with GitHub Actions, monorepos, or serverless architecture? Book a session.</p>
+      <p class="mt-2 text-slate-600 dark:text-slate-300">Need help with CI/CD, Devops, or well-architecture? Book a session.</p>
       <div class="mt-6 flex flex-col items-center gap-3">
         <!-- Option 1: Calendly link -->
         <a href="https://calendly.com/cloudgenesys-id/30min" target="_blank" class="inline-flex items-center rounded-2xl px-5 py-3 bg-brand-600 text-white hover:bg-brand-700 shadow">Schedule 30-min call</a>
@@ -158,7 +158,11 @@
   <!-- Learn -->
   <section id="learn" class="py-16 md:py-24 border-t border-slate-200 dark:border-slate-800">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <h2 class="text-3xl font-bold">Learn</h2>
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="text-3xl font-bold">Learn</h2>
+        <!-- Simple filters (optional) -->
+        <div class="hidden md:flex gap-2 text-xs" id="learnFilters"></div>
+      </div>
       <p class="mt-2 text-slate-600 dark:text-slate-300">Curated roadmaps and resources to level up.</p>
       <div id="learnGrid" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </div>
@@ -228,9 +232,41 @@
     ];
 
     // === Edit me: Learn ===
+    // New sections added per request: Cloud, IaC, Automation
     const learn = [
       {
+        title: 'Cloud',
+        tag: 'cloud',
+        items: [
+          'AWS',
+          'GCP',
+          'Huawei Cloud',
+          'Migration',
+          'Modernization'
+        ]
+      },
+      {
+        title: 'Infrastructure as Code (IaC)',
+        tag: 'iac',
+        items: [
+          'Terraform basics',
+          'State, workspaces, backends',
+          'Modules, testing, GitOps'
+        ]
+      },
+      {
+        title: 'Automation',
+        tag: 'automation',
+        items: [
+          'Script automation (Bash/Python)',
+          'Cron & schedulers',
+          'GitHub Actions basics'
+        ]
+      },
+      // existing learning cards
+      {
         title: 'GitHub Mastery',
+        tag: 'github',
         items: [
           'Actions: caches, services, and OIDC to cloud',
           'Code scanning & Dependabot for supply chain',
@@ -239,6 +275,7 @@
       },
       {
         title: 'Serverless Architecture',
+        tag: 'serverless',
         items: [
           'Event-driven design, idempotency, retries',
           'API Gateway patterns, auth with Cognito/Auth0',
@@ -247,12 +284,24 @@
       },
       {
         title: 'Cloud Foundations',
+        tag: 'foundations',
         items: [
           'IaC with Terraform/CDK/Pulumi',
           'Networking: VPC, private endpoints, gateways',
           'Security: IAM least privilege, KMS, SSM'
         ]
       }
+    ];
+
+    // Optional: quick filters for Learn (click to filter by tag)
+    const learnFilters = [
+      { key: 'all', label: 'All' },
+      { key: 'cloud', label: 'Cloud' },
+      { key: 'iac', label: 'IaC' },
+      { key: 'automation', label: 'Automation' },
+      { key: 'github', label: 'GitHub' },
+      { key: 'serverless', label: 'Serverless' },
+      { key: 'foundations', label: 'Foundations' }
     ];
 
     // Render helpers
@@ -292,18 +341,37 @@
       `));
     });
 
-    // Render Learn
+    // Render Learn filters (optional UI)
+    const filtersWrap = document.getElementById('learnFilters');
+    let currentFilter = 'all';
+    if (filtersWrap) {
+      learnFilters.forEach(f => {
+        const btn = el(`
+          <button data-key="${f.key}" class="px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800">${f.label}</button>
+        `);
+        btn.addEventListener('click', () => { currentFilter = f.key; renderLearn(); });
+        filtersWrap.appendChild(btn);
+      });
+    }
+
+    // Render Learn cards
     const learnGrid = document.getElementById('learnGrid');
-    learn.forEach(card => {
-      learnGrid.appendChild(el(`
-        <div class="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-sm">
-          <h3 class="font-semibold">${card.title}</h3>
-          <ul class="mt-3 text-sm list-disc list-inside text-slate-600 dark:text-slate-300">
-            ${card.items.map(i => `<li>${i}</li>`).join('')}
-          </ul>
-        </div>
-      `));
-    });
+    function renderLearn() {
+      learnGrid.innerHTML = '';
+      learn
+        .filter(card => currentFilter === 'all' || card.tag === currentFilter)
+        .forEach(card => {
+          learnGrid.appendChild(el(`
+            <div class="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-sm">
+              <h3 class="font-semibold">${card.title}</h3>
+              <ul class="mt-3 text-sm list-disc list-inside text-slate-600 dark:text-slate-300">
+                ${card.items.map(i => `<li>${i}</li>`).join('')}
+              </ul>
+            </div>
+          `));
+        });
+    }
+    renderLearn();
   </script>
 </body>
 </html>
